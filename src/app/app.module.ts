@@ -1,3 +1,5 @@
+import { ServiceModule } from './services/service.module';
+
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -7,6 +9,9 @@ import { APP_ROUTES } from './app.routes';
 
 //Modulos
 import { PagesModule } from './pages/pages.module'; 
+
+
+// services
 
 
 //Componentes
@@ -30,7 +35,8 @@ import { ProgressComponent } from './progress/progress/progress.component';
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
