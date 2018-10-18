@@ -1,6 +1,5 @@
 
 import { RouterModule, Routes } from '@angular/router';
-import { PagesComponent } from './pages/pages.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './login/register.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
