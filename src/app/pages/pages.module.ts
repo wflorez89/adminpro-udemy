@@ -1,3 +1,4 @@
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PagesComponent } from './pages.component';
@@ -23,6 +24,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 @NgModule({
     declarations : [
@@ -35,7 +37,9 @@ import { ProfileComponent } from './profile/profile.component';
         AccountSettingsComponent,
         PromesasComponent,
         RxjsComponent,
-        ProfileComponent
+        ProfileComponent,
+        UsuariosComponent,
+        ModalUploadComponent
     ],
     exports : [
         PagesComponent
