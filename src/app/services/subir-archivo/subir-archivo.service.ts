@@ -1,4 +1,3 @@
-import { resolve } from 'path';
 import { Injectable } from '@angular/core';
 import { URL_SERVICIOS } from '../../config/config';
 

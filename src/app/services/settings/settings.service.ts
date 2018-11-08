@@ -1,4 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
+// tslint:disable-next-line:quotemark
 import { DOCUMENT } from "@angular/platform-browser";
 
 @Injectable({

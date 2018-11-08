@@ -1,5 +1,4 @@
 import { URL_SERVICIOS } from '../../config/config';
-import * as url from 'url';
 
 import { Usuario } from '../../models/usuario.model';
 import { Injectable } from '@angular/core';
