@@ -1,3 +1,4 @@
+import { VerificatokenGuard } from '../services/service.index';
 import { MedicosComponent } from './medicos/medicos.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,15 +16,47 @@ import { MedicoComponent } from './medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { AdminGuard } from '../services/service.index';
 
-const pagesRoutes: Routes = [
+// const pagesRoutes: Routes = [
 
-    {
-        path: '',
-        component: PagesComponent,
-        canActivate: [LoginGuardGuard ],
-        children: [
+//     {
+//         path: '',
+//         component: PagesComponent,
+//         canActivate: [LoginGuardGuard ],
+//         children: [
+//             {path: 'progress', component: ProgressComponent, data : {titulo : 'progress'}},
+//             {path: 'dashboard', component: DashboardComponent, data : {titulo : 'Dashboard'}},
+//             {path: 'graficas1', component: Graficas1Component, data : {titulo : 'Grafias'}},
+//             {path: 'promesas', component: PromesasComponent, data : {titulo : 'promesas'}},
+//             {path: 'rxjs', component: RxjsComponent, data : {titulo : 'Rxjs'}},
+//             {path: 'account-settings', component: AccountSettingsComponent, data : {titulo : 'Ajustes del tema'}},
+//             {path: 'perfil', component: ProfileComponent, data : {titulo : 'Perfil Usuario'}},
+//             {path: 'busqueda/:termino', component: BusquedaComponent, data : {titulo : 'busqueda'}},
+
+//             //Mantenimientos
+//             {
+//                 path: 'usuarios', 
+//                 component: UsuariosComponent, 
+//                 data : {titulo : 'Mantenimiento de usaurios'},
+//                 canActivate :  [AdminGuard]
+//             },
+
+//             {path: 'hospitales', component: HospitalesComponent, data : {titulo : 'Mantenimiento de hospitales'}},
+//             {path: 'medicos', component: MedicosComponent, data : {titulo : 'Mantenimiento de medicos'}},
+//             {path: 'medico/:id', component: MedicoComponent, data : {titulo : 'Actualizar medico'}},
+//             {path: '', redirectTo: '/dashboard', pathMatch : 'full'}
+//         ]},
+// ];
+
+const pagesRoutes: Routes =  [
             {path: 'progress', component: ProgressComponent, data : {titulo : 'progress'}},
-            {path: 'dashboard', component: DashboardComponent, data : {titulo : 'Dashboard'}},
+            {
+                path: 'dashboard', 
+                component: DashboardComponent, 
+                canActivate : [VerificatokenGuard],
+                data : {
+                    titulo : 'Dashboard'
+                }
+            },
             {path: 'graficas1', component: Graficas1Component, data : {titulo : 'Grafias'}},
             {path: 'promesas', component: PromesasComponent, data : {titulo : 'promesas'}},
             {path: 'rxjs', component: RxjsComponent, data : {titulo : 'Rxjs'}},
@@ -43,8 +76,7 @@ const pagesRoutes: Routes = [
             {path: 'medicos', component: MedicosComponent, data : {titulo : 'Mantenimiento de medicos'}},
             {path: 'medico/:id', component: MedicoComponent, data : {titulo : 'Actualizar medico'}},
             {path: '', redirectTo: '/dashboard', pathMatch : 'full'}
-        ]},
-];
+        ];
 
 export const PAGES_ROUTES  = RouterModule.forChild(pagesRoutes);
 

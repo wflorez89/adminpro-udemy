@@ -4,7 +4,7 @@ import { Usuario } from '../../models/usuario.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { map, filter, scan ,catchError} from 'rxjs/operators';
+import { map, filter, scan, catchError } from 'rxjs/operators';
 import { LoginComponent } from '../../login/login.component';
 import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
@@ -28,7 +28,26 @@ menu : any[] = [];
   ) { 
   this.cargarStorage();
     
-  }
+}
+
+
+renuevaToken(){
+  let url = URL_SERVICIOS + '/login/renuevatoken';
+  url += '?token=' + this.token;
+
+  return this.http.get(url).pipe(
+    map( (resp  : any) => {
+      this.token = resp.token;
+      localStorage.setItem('token',this.token);
+      return true;
+    }),
+    catchError( err  => {
+      this.router.navigate(['/login']);
+      swal('no se pudo renovar el token','no fue posible renovar el token','error');
+      return throwError(err);
+    })
+  );
+}
 
   estaLogueado(){
     return (this.token.length > 5)  ? true : false;

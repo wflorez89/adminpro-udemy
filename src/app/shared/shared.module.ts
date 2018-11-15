@@ -6,6 +6,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NopagefoundComponent } from '../nopagefound/nopagefound.component';
 import { RouterModule } from '@angular/router';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 
 @NgModule({
@@ -19,12 +20,14 @@ import { RouterModule } from '@angular/router';
         HeaderComponent,
         SidebarComponent,
         BreadcrumbsComponent,
+        ModalUploadComponent
     ],
     exports : [
         NopagefoundComponent,
         HeaderComponent,
         SidebarComponent,
         BreadcrumbsComponent,
+        ModalUploadComponent
     ]
 
 })
